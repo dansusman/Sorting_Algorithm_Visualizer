@@ -1,6 +1,7 @@
 import unittest
 from quicksort import quicksort
 
+# tests for the quick sort implementation
 class TestQuickSort(unittest.TestCase):
     
     def test_empty_list(self):

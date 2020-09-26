@@ -1,8 +1,7 @@
 import unittest
 from mergesort import mergesort
-from numpy.random import seed
-from numpy.random import randint
 
+# tests for the merge sort implementation
 class TestMergeSort(unittest.TestCase):
 
     def test_empty_list(self):
@@ -34,15 +33,6 @@ class TestMergeSort(unittest.TestCase):
         twelve_element = [-325, 235, 4, 13, -36, 457, -2, 10, 6, 1, 4, 62]
         mergesort(twelve_element)
         self.assertEqual(twelve_element, [-325, -36, -2, 1, 4, 4, 6, 10, 13, 62, 235, 457])
-
-    # def test_random_array(self):
-        # generate a random array of ints using numpy
-        # seed random number generator
-       # seed(1)
-        # generate some integers
-        #random_twenty_element_array = randint(0, 10, 20)
-
-        # self.assertEqual(mergesort(random_twenty_element_array), )
 
 
 if __name__ == '__main__':

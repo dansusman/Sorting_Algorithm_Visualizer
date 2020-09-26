@@ -1,8 +1,6 @@
 import random
 
 # Sorts the given array in ascending order using the Quicksort algorithm
-
-
 def quicksort(arr, start, end):
 
     # optimize further the speed of this algorithm by using selection sort on arrays of small size
@@ -21,11 +19,12 @@ def quicksort(arr, start, end):
         quicksort(arr, start, pivot)
         quicksort(arr, pivot + 1, end)
 
-
+# finds a random pivot index in the array, to be used when partitioning
 def find_pivot(start, end):
     return random.randrange(start, end)
 
-
+# partitions the list around the pivot so that all values smaller than the value at the pivot are on 
+# the left side of the partition and all larger values on the right
 def partition(arr, start, end, pivot):
 
     value_at_pivot = arr[pivot]
@@ -35,10 +34,12 @@ def partition(arr, start, end, pivot):
 
     border = start
 
-    # iterate through the list, swap current element with border element if the former is smaller than pivot value
+    # iterate through the list, swap current element with border element if the former is 
+    # smaller than pivot value
     for i in range(start, end):
         if arr[i] < value_at_pivot:
-            # each time we swap an element to the left, we increment the index of the border (move it to the right)
+            # each time we swap an element to the left, we increment the index of the
+            # border (move it to the right)
             border += 1
             arr[i], arr[border] = arr[border], arr[i]
     # swap pivot value with border value
