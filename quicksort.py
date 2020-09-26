@@ -1,11 +1,12 @@
 import random
+from selection_sort import selection_sort
 
 # Sorts the given array in ascending order using the Quicksort algorithm
 def quicksort(arr, start, end):
 
     # optimize further the speed of this algorithm by using selection sort on arrays of small size
-    #if (end - start < 20) and (end > start):
-    #    selection_sort(arr, start, end)
+    if (end - start < 20) and (end > start):
+        selection_sort(arr)
 
     if (end > start):
 
