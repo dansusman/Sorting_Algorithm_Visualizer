@@ -1,9 +1,7 @@
 import unittest
 from selection_sort import selection_sort
 
-# tests for the merge sort implementation
-
-
+# tests for the selection sort implementation
 class TestSelectionSort(unittest.TestCase):
 
     def test_empty_list(self):
