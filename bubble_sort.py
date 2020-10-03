@@ -20,17 +20,15 @@ class BubbleSort(Algo):
 
         # go through whole list, making 1 to 1 comparisons
         # each pass guarantees that largest item is placed in correct place in array
-        for _ in range(len(self.arr) - 1):
+        for _ in range(len(self.arr)):
             left_swap = 0
             right_swap = 1
             for j in range(len(self.arr) - 1):
-
                 # if the element one ahead is less than the one being examined, swap the two
                 if self.arr[j] > self.arr[j + 1]:
-                    self.arr[j], self.arr[j+1] = self.arr[j + 1], self.arr[j]
                     left_swap = self.arr[j]
                     right_swap = self.arr[j+1]
-
+                    self.arr[j], self.arr[j+1] = self.arr[j + 1], self.arr[j]
             # update the view each swap, highlighting the two elements being swapped
             self.update_view(left_swap, right_swap)
             
