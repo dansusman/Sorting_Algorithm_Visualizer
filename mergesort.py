@@ -17,47 +17,48 @@ class MergeSort(Algo):
     def __init__(self):
         super().__init__("Merge Sort")
 
-    def sort_by_algo(self):
-    """ Sorts the given array using the divide and conquer algorithm, Mergesort Running
-     time complexity: O(n log n) average, best, and worst cases."""
-    
-    # if the list is greater than 1, we will do in-place sorting in ascending order
-    # (otherwise, the list is trivially sorted)
-    if (len(arr) > 1):
-        # compute middle of array with integer division
-        mid = len(arr) // 2
+    def sort_by_algo(self, array=[]):
+        """ Sorts the given array using the divide and conquer algorithm, Mergesort Running time
+        complexity: O(n log n) average, best, and worst cases."""
+        if array == []:
+            array = self.arr
+        if len(array) < 2:
+            return array
+        # if the list is greater than 1, we will do in-place sorting in ascending order
+        # (otherwise, the list is trivially sorted)
+        if len(array) > 1:
+            # compute middle of array with integer division
+            mid = len(array) // 2
 
-        # using mid at middle point, break arr into two halves
-        left = arr[:mid]
-        right = arr[mid:]
+            # using mid at middle point, break arr into two halves
+            left = array[:mid]
+            right = array[mid:]
 
-        # sort each half
-        mergesort(left)
-        mergesort(right)
+            sort_left = self.sort_by_algo(left)
+            sort_right = self.sort_by_algo(right)
+            # sort each half and merge
+            return self.merge(sort_left, sort_right)
 
-        # merge the two halves
-        # i will traverse the left half, j the right half, and k the whole list
+    def merge(self, left, right):
+        """ Merge the two halves."""
+        result = []
+        # i will traverse the left half, and j the right half
         i = 0
         j = 0
-        k = 0
 
-        while (i < len(left)) and (j < len(right)):
-            if (left[i] < right[j]):
-                arr[k] = left[i]
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                result.append(left[i])
                 i += 1
             else:
-                arr[k] = right[j]
+                result.append(right[j])
                 j += 1
-            k += 1
+            self.update_view()
 
         # copy over leftovers of left half (if they exist)
-        while (i < len(left)):
-            arr[k] = left[i]
-            i += 1
-            k += 1
-        
+        result += left[i:]
         #copy over leftovers of right half (if they exist)
-        while (j < len(right)):
-            arr[k] = right[j]
-            j += 1
-            k += 1
+        result += right[j:]
+        self.arr = result
+        self.update_view()
+        return result

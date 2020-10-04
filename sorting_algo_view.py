@@ -54,37 +54,36 @@ def check_events():
 # Update the screen based on the current state of the sorting (each tick)
 def update(algorithm, left_swap=None, right_swap=None, display=display):
     display.fill(pygame.Color("white"))
-    
-    # make top bar display which algorithm is being used currently, the amount of time that has passe
-    # since the beginning of the sort, and the current status (sorting or done)
+
+    # make top bar display which algorithm is being used currently, the amount of time
+    # that has passed since the beginning of the sort, and the current status (sorting or done)
     pygame.display.set_caption("Algorithm: {}     Time: {:.3f}      Status: {}".format(
         algorithm.name, time.time() - algorithm.start_time, statuses[0]))
-    
-    k = int(dimensions[0]/len(algorithm.arr))
-    
-    # make a rectangle whose height corresponds to the int at a specific location in the array to be sorted
+
+    k = int(dimensions[0] / len(algorithm.arr))
+
+    # make a rectangle whose height corresponds to the int at a specific location in the array
+    # to be sorted
     for i in range(len(algorithm.arr)):
         color = (247, 202, 201)
         if left_swap == algorithm.arr[i]:
             color = (0, 255, 0)
         elif right_swap == algorithm.arr[i]:
             color = (255, 0, 0)
-        pygame.draw.rect(display, color, (i*k, dimensions[1], k, -algorithm.arr[i]))
-    #play_sound(swap2) # - Uncomment if you want sound to play with each swap
+        # draw rectangles whose heights represent the random integers in the array
+        pygame.draw.rect(display, color, (i * k, dimensions[1], k, -algorithm.arr[i]))
     check_events()
     pygame.time.wait(20)
     pygame.display.update()
 
-
 def keep_open(algorithm, display, time):
-    """Updates the scene each tick until the algorithm has completed, at which point 
+    """Updates the scene each tick until the algorithm has completed, at which point
     reflect that status in the top bar."""
     pygame.display.set_caption("Algorithm: {}     Time: {:.3f}        {}".format(
         algorithm.name, time, statuses[1]))
     while True:
         check_events()
         pygame.display.update()
-
 
 def main():
     """Runs the visualization program if given valid input algorithm name."""
@@ -102,6 +101,6 @@ def main():
                 pass
         except IOError:
             print("{} is not a valid sorting algorithm. Inputs MUST be in snake_case!".format(
-                sys.argv[1]))    
+                sys.argv[1]))
 if __name__ == "__main__":
     main()

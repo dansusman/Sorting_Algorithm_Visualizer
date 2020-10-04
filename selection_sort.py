@@ -12,8 +12,10 @@ from algorithms import Algo
 class SelectionSort(Algo):
     """ Represents a Selection Sort algorithm which has an O(n^2) best case, worst case, 
     and average case running time"""
+
     def __init__(self):
         super().__init__("Selection Sort")
+
     def sort_by_algo(self):
         """Sorts the array using Selection Sort sorting algorithm."""
         for i in range(len(self.arr)):

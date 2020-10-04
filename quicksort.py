@@ -13,6 +13,7 @@ from algorithms import Algo
 class QuickSort(Algo):
     """ Represents the Bubble Sort algorithm, which is an O(n) best
     case, O(n^2) average case, and O(n^2) worst case algorithm."""
+
     # initialize by assigning quick sort a name in Algo class
     def __init__(self):
         super().__init__("Quick Sort")
@@ -30,9 +31,11 @@ class QuickSort(Algo):
             # sort the two sides of the array
             self.sort_by_algo(array, start, pivot)
             self.sort_by_algo(array, pivot + 1, end)
+
     def find_pivot(self, start, end):
         """ Finds a random pivot index in the array, to be used when partitioning."""
         return random.randrange(start, end)
+
     def partition(self, arr, start, end, pivot):
         """ Partitions the list around the pivot so that all values smaller than the value 
         at the pivot are on the left side of the partition and all larger values on the right."""

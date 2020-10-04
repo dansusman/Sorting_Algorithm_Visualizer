@@ -11,9 +11,11 @@ from algorithms import Algo
 class BubbleSort(Algo):
     """ Represents the Bubble Sort algorithm, which is an O(n) best
     case, O(n^2) average case, and O(n^2) worst case algorithm."""
+
     # initialize by assigning bubble sort a name in Algo class
     def __init__(self):
         super().__init__("Bubble Sort")
+
     def sort_by_algo(self):
         """Implementation of bubble sort."""
 
