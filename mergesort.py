@@ -53,12 +53,10 @@ class MergeSort(Algo):
             else:
                 result.append(right[j])
                 j += 1
-            self.update_view()
 
         # copy over leftovers of left half (if they exist)
         result += left[i:]
         #copy over leftovers of right half (if they exist)
         result += right[j:]
-        self.arr = result
         self.update_view()
         return result
