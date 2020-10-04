@@ -11,7 +11,7 @@ from algorithms import Algo
 class InsertionSort(Algo):
     """ Represents the Insertion Sort algorithm, which is an 
     O(n^2) best case, worst case, and average case algorithm."""
-    # initialize by assigning bubble sort a name in Algo class
+    # initialize by assigning insertion sort a name in Algo class
     def __init__(self):
         super().__init__("Insertion Sort")
         

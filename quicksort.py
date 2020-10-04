@@ -3,20 +3,17 @@
 Created by Daniel Susman (dansusman)
 Date: 10/03/2020
 
-This module contains a modified Quick Sort implementation that utilizes 
-Insertion Sort for small arrays, thus improving average running time. It
-contains the QuickSort class that extends the Algo class, thus inheriting
-the ability to display the step-by-step process it takes to sort an array.
+This module contains a Quick Sort implementation. It contains the QuickSort class
+ that extends the Algo class, thus inheriting the ability to display the
+ step-by-step process it takes to sort an array.
 
 """
 import random
-from insertion_sort import InsertionSort
 from algorithms import Algo
 class QuickSort(Algo):
     """ Represents the Bubble Sort algorithm, which is an O(n) best
     case, O(n^2) average case, and O(n^2) worst case algorithm."""
-
-    # initialize by assigning bubble sort a name in Algo class
+    # initialize by assigning quick sort a name in Algo class
     def __init__(self):
         super().__init__("Quick Sort")
 

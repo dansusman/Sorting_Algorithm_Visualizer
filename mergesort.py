@@ -10,8 +10,14 @@ favorite sorting algorithm.
 
 """
 from algorithms import Algo
+class MergeSort(Algo):
+    """ Represents the Merge Sort algorithm and contains all of its functionality
+    and data."""
+    # initialize by assigning merge sort a name in Algo class
+    def __init__(self):
+        super().__init__("Merge Sort")
 
-def mergesort(arr):
+    def sort_by_algo(self):
     """ Sorts the given array using the divide and conquer algorithm, Mergesort Running
      time complexity: O(n log n) average, best, and worst cases."""
     
