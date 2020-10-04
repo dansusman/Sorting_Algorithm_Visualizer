@@ -20,14 +20,18 @@ import sys
 import pygame
 import bubble_sort
 import selection_sort
+import insertion_sort
+import quicksort
 
-dimensions = (800, 800)
+dimensions = (1400, 700)
 
 statuses = ["Currently Sorting", "Sorting Complete!"]
 
 sorting_algorithms = {
     "bubble_sort": bubble_sort.BubbleSort(),
-    "selection_sort": selection_sort.SelectionSort()
+    "selection_sort": selection_sort.SelectionSort(),
+    "insertion_sort": insertion_sort.InsertionSort(),
+    "quick_sort": quicksort.QuickSort()
 }
 
 pygame.init()

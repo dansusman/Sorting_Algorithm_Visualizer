@@ -9,14 +9,14 @@ to display the sorting of a given array using the Bubble Sort algorithm.
 """
 from algorithms import Algo
 class BubbleSort(Algo):
-    """Represents the Bubble Sort algorithm, which is an O(n^2) best case, worst case, 
-    and average case algorithm."""
+    """Represents the Bubble Sort algorithm, which is an O(n) best
+    case, O(n^2) average case, and O(n^2) worst case algorithm."""
 
     # initialize by assigning bubble sort a name in Algo class
     def __init__(self):
-        super().__init__("BubbleSort")
+        super().__init__("Bubble Sort")
     def sort_by_algo(self):
-        """Implementation of bubble sort"""
+        """Implementation of bubble sort."""
 
         # go through whole list, making 1 to 1 comparisons
         # each pass guarantees that largest item is placed in correct place in array
