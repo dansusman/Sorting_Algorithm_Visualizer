@@ -9,7 +9,7 @@ to display the sorting of a given array using the Insertion Sort algorithm.
 
 from algorithms import Algo
 class InsertionSort(Algo):
-    """Represents the Insertion Sort algorithm, which is an 
+    """ Represents the Insertion Sort algorithm, which is an 
     O(n^2) best case, worst case, and average case algorithm."""
     # initialize by assigning bubble sort a name in Algo class
     def __init__(self):

@@ -10,7 +10,7 @@ sorting of a random array and display of step-by-step actions taken to do so.
 from algorithms import Algo
 
 class SelectionSort(Algo):
-    """Represents a Selection Sort algorithm which has an O(n^2) best case, worst case, 
+    """ Represents a Selection Sort algorithm which has an O(n^2) best case, worst case, 
     and average case running time"""
     def __init__(self):
         super().__init__("Selection Sort")

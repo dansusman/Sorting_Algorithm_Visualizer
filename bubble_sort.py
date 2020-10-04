@@ -9,7 +9,7 @@ to display the sorting of a given array using the Bubble Sort algorithm.
 """
 from algorithms import Algo
 class BubbleSort(Algo):
-    """Represents the Bubble Sort algorithm, which is an O(n) best
+    """ Represents the Bubble Sort algorithm, which is an O(n) best
     case, O(n^2) average case, and O(n^2) worst case algorithm."""
 
     # initialize by assigning bubble sort a name in Algo class

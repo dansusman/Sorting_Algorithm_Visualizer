@@ -22,6 +22,7 @@ import bubble_sort
 import selection_sort
 import insertion_sort
 import quicksort
+import mergesort
 
 dimensions = (1400, 700)
 
@@ -31,7 +32,8 @@ sorting_algorithms = {
     "bubble_sort": bubble_sort.BubbleSort(),
     "selection_sort": selection_sort.SelectionSort(),
     "insertion_sort": insertion_sort.InsertionSort(),
-    "quick_sort": quicksort.QuickSort()
+    "quick_sort": quicksort.QuickSort(),
+    "merge_sort": mergesort.MergeSort()
 }
 
 pygame.init()
